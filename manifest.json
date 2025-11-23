@@ -1,0 +1,36 @@
+{
+  "id": "dashboard-lb-proxy",
+  "name": "Dashboard Barbearia Lucas Borges",
+  "short_name": "Dashboard LB",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#005e6a",
+  "theme_color": "#005e6a",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon_any_192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon_maskable_192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon_any_512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon_maskable_512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
