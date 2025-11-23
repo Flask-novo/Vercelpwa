@@ -1,21 +1,21 @@
 import { next } from '@vercel/edge';
 
+// CONFIGURAÇÃO DE SEGURANÇA
+// Isto obriga o middleware a rodar APENAS na raiz do site.
+// Ele vai ignorar automaticamente websockets, arquivos estáticos e subpáginas.
+export const config = {
+  matcher: '/',
+};
+
 export default async function middleware(request) {
-  const url = new URL(request.url);
-
-  // REGRA DE OURO: Só mexe se for a página inicial (raiz)
-  // Isso impede que ele trave os dados do Streamlit (/_stcore/...)
-  if (url.pathname !== '/') {
-    return next(request);
-  }
-
   const response = await next(request);
   const contentType = response.headers.get('content-type');
 
+  // Verifica se é uma página HTML antes de mexer
   if (contentType && contentType.includes('text/html')) {
     let text = await response.text();
     
-    // Injeta o PWA apenas na capa
+    // Injeta o PWA
     const pwaScript = `
       <link rel="manifest" href="/manifest.json">
       <meta name="theme-color" content="#005e6a">
@@ -28,6 +28,7 @@ export default async function middleware(request) {
       </script>
     `;
 
+    // Substitui e retorna
     text = text.replace('</head>', `${pwaScript}</head>`);
     
     return new Response(text, {
