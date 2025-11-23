@@ -1,8 +1,9 @@
 {
   "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "https://dashboard-barbearia-lb.onrender.com/$1"
-    }
+    { "source": "/sw.js", "destination": "/sw.js" },
+    { "source": "/manifest.json", "destination": "/manifest.json" },
+    { "source": "/icon_(.*)", "destination": "/icon_$1" },
+    { "source": "/", "destination": "/api/index" },
+    { "source": "/(.*)", "destination": "https://dashboard-barbearia-lb.onrender.com/$1" }
   ]
 }
