@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "https://dashboard-barbearia-lb.onrender.com/$1"
+    }
+  ]
+}
