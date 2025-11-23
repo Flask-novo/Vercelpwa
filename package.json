@@ -1,0 +1,10 @@
+{
+  "name": "pwa-proxy-wrapper",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "echo 'Sem build necessário'"
+  },
+  "dependencies": {
+    "@vercel/edge": "latest"
+  }
+}
